@@ -1,3 +1,4 @@
+
 from __future__ import division
 
 import re
@@ -8,6 +9,9 @@ from google.cloud.speech import enums
 from google.cloud.speech import types
 import pyaudio
 from six.moves import queue
+
+import os
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/Python-master/Auth.json"
 
 # Audio recording parameters
 RATE = 16000

@@ -1,4 +1,7 @@
-
+def warn(*args, **kwargs):
+    pass
+import warnings
+warnings.warn = warn
 from __future__ import division
 
 import re

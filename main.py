@@ -15,7 +15,7 @@ from six.moves import queue
 
 import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/Python-master/Auth.json"
-
+os.environ["PA_ALSA_PLUGHW"] = 1
 # Audio recording parameters
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms

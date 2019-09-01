@@ -1,5 +1,4 @@
 from __future__ import division
-⁵
 import re
 import sys
 

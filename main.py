@@ -7,7 +7,8 @@ from google.cloud.speech import enums
 from google.cloud.speech import types
 import pyaudio
 from six.moves import queue
-
+from ctypes import *
+from contextlib import contextmanager
 import os
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/Python-master/Auth.json"

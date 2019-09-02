@@ -12,9 +12,6 @@ from contextlib import contextmanager
 import os
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/Python-master/Auth.json"
-os.environ["PA_ALSA_PLUGHW"] = "1"
-asound = cdll.LoadLibrary('libasound.so')
-asound.snd_lib_error_set_handler(None)
 # Audio recording parameters
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms

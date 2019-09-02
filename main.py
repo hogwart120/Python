@@ -107,9 +107,7 @@ def listen_print_loop(responses):
         
             num_chars_printed = 0
         break
-    self._audio_stream.stop_stream()
-    self._audio_stream.close()
-    self.closed = True
+    
 def main():
     language_code = 'vi-VN'
     client = speech.SpeechClient()

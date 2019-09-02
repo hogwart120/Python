@@ -131,9 +131,7 @@ def main():
 detector = snowboydecoder.HotwordDetector('alexa.umdl', sensitivity=0.7, audio_gain=1)
 
 def detected_callback():
-    global detector
-    detector.terminate(()
-    detector.terminate(()
+    detector.terminate()
     snowboydecoder.play_audio_file
     print('Vui lòng ra lệnh')
     main()

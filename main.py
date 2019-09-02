@@ -10,6 +10,7 @@ from six.moves import queue
 from ctypes import *
 from contextlib import contextmanager
 import os
+import snowboydecoder
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/home/pi/Python-master/Auth.json"
 # Audio recording parameters
@@ -103,13 +104,14 @@ def listen_print_loop(responses):
             if re.search(r'\b(exit|quit)\b', transcript, re.I):
                 print('Exiting..')
                 break
-
+        
             num_chars_printed = 0
-
-
+        break
+    self._audio_stream.stop_stream()
+    self._audio_stream.close()
+    self.closed = True
 def main():
     language_code = 'vi-VN'
-
     client = speech.SpeechClient()
     config = types.RecognitionConfig(
         encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
@@ -126,6 +128,15 @@ def main():
         responses = client.streaming_recognize(streaming_config, requests)
         listen_print_loop(responses)
 
+detector = snowboydecoder.HotwordDetector('alexa.umdl', sensitivity=0.7, audio_gain=1)
 
-if __name__ == '__main__':
+def detected_callback():
+    global detector
+    detector.terminate(()
+    detector.terminate(()
+    snowboydecoder.play_audio_file
+    print('Vui lòng ra lệnh')
     main()
+    detector.start(detected_callback, sleep_time=0.01)
+while True:
+    detector.start(detected_callback, sleep_time=0.01)
